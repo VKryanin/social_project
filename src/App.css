@@ -37,6 +37,8 @@
   }
 }
 .app-wrapper {
+  width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-areas: 
   'h h' 
@@ -51,7 +53,7 @@
   background-color: chartreuse;
 }
 .header img {
-  width: 100px;
+  width: 70px;
 }
 
 .nav {
@@ -62,4 +64,8 @@
 .content {
   grid-area: c;
   background-color: blue;
+}
+
+.content img {
+  width: 100%;
 }
