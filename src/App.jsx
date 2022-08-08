@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { Header } from './components/Header';
-import { Navbar } from './components/nav';
-import { Profile } from './components/Profile';
+import { Header } from './components/Header.jsx';
+import { Navbar } from './components/nav.jsx';
+import { Profile } from './components/Profile.jsx';
 
 
 

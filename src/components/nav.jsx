@@ -1,5 +1,4 @@
-
-
+import './nav.css'
 
 export const Navbar = () => {
     return <nav className='nav'>
