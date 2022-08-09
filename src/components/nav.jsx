@@ -1,24 +1,24 @@
-import './nav.css'
+import classes from './Navbar.module.css'
 
-export const Navbar = () => {
-    return <nav className='nav'>
-          <div className="item">
-            <a>Profile</a>
-          </div>
-          <div className="item">
-            <a>Messages</a>
-          </div>
-          <div className="item">
-            <a>News</a>
-          </div>
-          <div className="item">
-            <a>Music</a>
-          </div>
-          <div className="item">
-            <a>Profile</a>
-          </div>
-          <div className="item">
-            <a>Setting</a>
-          </div>
-        </nav>
+export function Navbar() {
+  return <nav className={classes.nav}>
+    <div className={classes.item}>
+      <a>Profile</a>
+    </div>
+    <div className={classes.item}>
+      <a>Messages</a>
+    </div>
+    <div className={classes.item}>
+      <a>News</a>
+    </div>
+    <div className={classes.item}>
+      <a>Music</a>
+    </div>
+    <div className={classes.item}>
+      <a>Profile</a>
+    </div>
+    <div className={classes.item}>
+      <a>Setting</a>
+    </div>
+  </nav>
 }

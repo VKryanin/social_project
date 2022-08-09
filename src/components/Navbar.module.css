@@ -2,3 +2,7 @@
     grid-area: n;
     background-color: #61dafb;
   }
+
+  .item {
+    color: aliceblue;
+  }
