@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import { Header } from './components/Header.jsx';
-import { Navbar } from './components/nav.jsx';
-import { Profile } from './components/Profile.jsx';
+import { Header } from './components/Header/Header.jsx';
+import { Navbar } from './components/Navbar/nav.jsx';
+import { Profile } from './components/Profile/Profile.jsx';
+import React from 'react';
 
 
 
@@ -15,5 +16,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
