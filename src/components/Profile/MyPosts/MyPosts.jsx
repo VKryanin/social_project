@@ -1,20 +1,18 @@
+import React from 'react'
 import s from './MyPosts.module.css'
-import React from 'react';
+import { Post }  from './Post/Post'
 
 export const MyPosts = () => {
     return (
-        <div onClick={ ()=>{alert('eeeee boy')} }>
+        <div>
             my posts
             <div>
-            new post
+                <textarea></textarea>
+                <button>Add post</button>
             </div>
             <div className={s.posts}>
-                <div className={s.item} onClick={ ()=>{alert('lol')}}>
-                post 1
-                </div>
-                <div className={s.item}>
-                post 2
-                </div>
+                <Post message="Hi, how are you?" />
+                <Post message="It's my first post"/>
             </div>
         </div>)
 }
