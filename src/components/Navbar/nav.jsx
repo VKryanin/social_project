@@ -3,22 +3,19 @@ import cl from './Navbar.module.css'
 export function Navbar() {
   return <nav className={cl.nav}>
     <div className={cl.item}>
-      <a>Profile</a>
+      <a href='/profile'>Profile</a>
     </div>
     <div className={`${cl.item} ${cl.active}`}>
-      <a>Messages</a>
+      <a href='/dialogs'>Messages</a>
     </div>
     <div className={cl.item}>
-      <a>News</a>
+      <a href='/news' >News</a>
     </div>
     <div className={cl.item}>
-      <a>Music</a>
+      <a href='/music'>Music</a>
     </div>
     <div className={cl.item}>
-      <a>Profile</a>
-    </div>
-    <div className={cl.item}>
-      <a>Setting</a>
+      <a href='/setting' >Setting</a>
     </div>
   </nav>
 }
