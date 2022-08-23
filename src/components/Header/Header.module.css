@@ -1,7 +1,8 @@
  
 .header{
     grid-area: h;
-    background-color: chartreuse;
+    background-color:gainsboro;
+    border-bottom: 3px black ;
   }
 
 .header img {
