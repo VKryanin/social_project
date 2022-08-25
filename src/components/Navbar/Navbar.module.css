@@ -1,8 +1,7 @@
 .nav {
     grid-area: n;
-    background-color: gainsboro;
+    background-color: #5DB8EF;
     padding: 20px;
-    border-right: 0.5px solid gray;
   }
 
 .item {

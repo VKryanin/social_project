@@ -4,8 +4,8 @@ import { Post } from './Post/Post'
 
 export const MyPosts = () => {
     let postsData = [
-        { id: 1, post: 'Hi! How are you?', likesCount: 12 },
-        { id: 2, post: 'It\'s my first post', likesCount: 24 }
+        { id: 1, post: 'I\'ll become king of the pirates', likesCount: 12 },
+        { id: 2, post: 'Hello! I\`m Monkey D. Luffy', likesCount: 24 }
     ]
 
     return (
@@ -20,8 +20,8 @@ export const MyPosts = () => {
                 </div>
             </div>
             <div className={s.posts}>
-                <Post message="Hi, how are you?" like='1' />
-                <Post message="It's my first post" like='15' />
+                <Post message={postsData[0].post} like={postsData[0].likesCount} />
+                <Post message={postsData[1].post} like={postsData[1].likesCount} />
             </div>
         </div>)
 }
