@@ -20,8 +20,8 @@ export const MyPosts = () => {
                 </div>
             </div>
             <div className={s.posts}>
-                <Post message="Hi, how are you?" like='1' />
-                <Post message="It's my first post" like='15' />
+                <Post message={postsData[0].post} like={postsData[0].likesCount} />
+                <Post message={postsData[1].post} like={postsData[1].likesCount} />
             </div>
         </div>)
 }
