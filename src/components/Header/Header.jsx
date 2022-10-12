@@ -1,9 +1,9 @@
-import s from './Header.module.css';
 import React from 'react';
 import logo from './pngwing.png'
+import style from './Header.module.css';
 
 export const Header= () => {
-    return  <header className={s.header}>
+    return  <header className={style.header}>
     <img src={logo}/>
     </header>
 }
