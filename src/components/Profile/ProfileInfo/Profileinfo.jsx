@@ -4,7 +4,7 @@ import React from 'react';
 export const Profileinfo = () => {
   return (
     <div>
-      <div>
+      <div className={s.content}>
         <img src='https://gamemag.ru/images/cache/News/News165122/5655865a15-1_1390x600.jpg' />
       </div>
       <div className={s.descriptionBlock}>

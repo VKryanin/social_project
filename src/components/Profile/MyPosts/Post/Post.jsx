@@ -14,7 +14,7 @@ export const Post = (props) => {
             </div>
             <div className={s.CountLikes}>
                 <span className={s.date}>{props.date}</span>
-                <span>Like {props.like}</span>
+                <span><span className={s.likeText}>Like </span>{props.like}</span>
             </div>
         </div>)
 }

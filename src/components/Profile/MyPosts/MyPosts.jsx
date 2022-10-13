@@ -7,7 +7,7 @@ export const MyPosts = () => {
         { id: 1, post: 'Hello! I\`m Monkey D. Luffy', likesCount: Math.floor(Math.random() * 1000), date: 'October 20, 1999' },
         { id: 2, post: 'I\'ll become king of the pirates', likesCount: Math.floor(Math.random() * 2000), date: 'October 20, 1999' },
         { id: 3, post: 'Today I met my new nakama. His name\`s Roronoa Zoro', likesCount: Math.floor(Math.random() * 3000), date: 'November 17, 1999' },
-        { id: 4, post: 'I defeated morgan', likesCount: Math.floor(Math.random() * 1000), date: 'November 24, 1999' }
+        { id: 4, post: 'I defeated Morgan', likesCount: Math.floor(Math.random() * 1000), date: 'November 24, 1999' }
     ]
 
     return (

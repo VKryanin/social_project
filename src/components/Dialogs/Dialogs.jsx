@@ -16,13 +16,15 @@ const Message = (props) => {
 
 export const Dialogs = (props) => {
     let dialogs = [
-        { id: 1, name: 'Ksusha' },
-        { id: 2, name: 'Misha' },
-        { id: 3, name: 'Andrey' },
-        { id: 4, name: 'Tolya' },
-        { id: 5, name: 'Alina' },
-        { id: 6, name: 'Sergey' },
-        { id: 7, name: 'Maksim' }
+        { id: 1, name: 'Roronoa Zoro' },
+        { id: 2, name: 'Nami' },
+        { id: 3, name: 'Usopp' },
+        { id: 4, name: 'Vinsmoke Sanji' },
+        { id: 5, name: 'Tony Chopper' },
+        { id: 6, name: 'Nico Robin' },
+        { id: 7, name: 'Franky' },
+        { id: 8, name: 'Brook' },
+        { id: 9, name: 'Jinbe'}
     ]
     let messages = [
         { id: 1, message: 'Hi!' },
