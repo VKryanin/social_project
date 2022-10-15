@@ -11,7 +11,6 @@ export const Profileinfo = () => {
     <div className={s.container}>
       <div className={s.content}>
         <img className={s.first} src={first} />
-        {/* <img className={s.logo} src={logo} alt="" /> */}
         <img src={second} alt=""  />
       </div>
       <div className={s.descriptionBlock}>

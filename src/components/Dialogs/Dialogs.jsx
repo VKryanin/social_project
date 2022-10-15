@@ -26,14 +26,14 @@ const Message = (props) => {
 export const Dialogs = (props) => {
     let dialogs = [
         { id: 'id1', name: 'Roronoa Zoro', photo: 'https://i.pinimg.com/originals/39/72/f8/3972f81d4123278662c34eb40a25f0fd.jpg' },
-        { id: 'id2', name: 'Nami', photo: 'https://sun9-23.userapi.com/impf/c639530/v639530594/615c4/q-ET9Kzlmig.jpg?size=540x540&quality=96&sign=68472e2a989677fbb07bc228eed45305&type=album' },
-        { id: 'id3', name: 'Usopp', photo: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/03/One-Piece-Usopp.jpg' },
+        { id: 'id2', name: 'Nami', photo: 'https://qph.cf2.quoracdn.net/main-qimg-cfb83d19fb9211e2129bc5000ccb3fd7-lq' },
+        { id: 'id3', name: 'Usopp', photo: 'https://i.pinimg.com/originals/d6/a8/6d/d6a86d1785e5ea99bfb40c0cb998cb7d.jpg' },
         { id: 'id4', name: 'Vinsmoke Sanji', photo: 'https://i.pinimg.com/736x/51/20/be/5120beb6e4806cc1c4116fb31ef2240e.jpg' },
-        { id: 'id5', name: 'Tony Chopper', photo: 'https://preview.redd.it/6mhixv0a45v81.jpg?width=640&crop=smart&auto=webp&s=15b1d503b90b4ad5809df609187dfb12fbbfbeb9' },
-        { id: 'id6', name: 'Nico Robin', photo: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/10/one-piece-nico-robin-header.jpg' },
+        { id: 'id5', name: 'Tony Chopper', photo: 'https://i.pinimg.com/originals/27/c2/eb/27c2eba8140ebe9fb49a70d46b0bf898.png' },
+        { id: 'id6', name: 'Nico Robin', photo: 'https://i.pinimg.com/originals/a9/ba/23/a9ba23b80a87b3c9871699d2c6b421a4.jpg' },
         { id: 'id7', name: 'Franky', photo: 'https://i.pinimg.com/564x/03/5b/40/035b40228c942eb12eaa649460d9ffe5.jpg' },
         { id: 'id8', name: 'Brook', photo: 'https://i.pinimg.com/originals/16/01/39/16013909cf63f579d537c710ee3d606f.jpg' },
-        { id: 'id9', name: 'Jinbe', photo: 'https://practicaltyping.com/wp-content/uploads/2018/09/jinbe.png' }
+        { id: 'id9', name: 'Jinbe', photo: 'https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2022/08/12/162612956.jpg' }
     ]
     let messages = [
         { id: 1, message: 'Hi!' },
@@ -45,7 +45,7 @@ export const Dialogs = (props) => {
 
     let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} photo={d.photo} />);
     let messagesElements = messages.map(m => <Message message={m.message} />);
-
+    
     return (
         <div className={s.dialogs} >
             <div className={s.dialogsItems}>
