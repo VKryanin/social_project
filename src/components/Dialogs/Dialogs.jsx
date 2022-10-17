@@ -5,8 +5,11 @@ import { NavLink } from 'react-router-dom';
 
 const DialogItem = (props) => {
     let path = '/dialogs/' + props.id;
-    return <div className={s.dialog + ' ' + s.active}>
-        <NavLink to={path}>
+
+    // return <div id='test' className = {s.dialog} >
+    return <div id='test' className = {test=>{console.log("test", test); return s.dialog}} >
+        <NavLink to={path} className={msg => msg.isActive ? s.active : s.passive}>
+            {/* <div className={test => test.isActive ? s.container : s.container}> */}
             <div className={s.container}>
                 <div className={s.avatar}>
                     <img className={s.photo} src={props.photo} alt="photo" />
@@ -20,10 +23,11 @@ const DialogItem = (props) => {
 }
 
 const Message = (props) => {
-    return <div className={s.dialog}>{props.message}</div>
+    return <div className={s.message}>{props.message}</div>
 }
 
 export const Dialogs = (props) => {
+
     let dialogs = [
         { id: 'id1', name: 'Roronoa Zoro', photo: 'https://i.pinimg.com/originals/39/72/f8/3972f81d4123278662c34eb40a25f0fd.jpg' },
         { id: 'id2', name: 'Nami', photo: 'https://qph.cf2.quoracdn.net/main-qimg-cfb83d19fb9211e2129bc5000ccb3fd7-lq' },
@@ -43,9 +47,9 @@ export const Dialogs = (props) => {
         { id: 5, message: 'yo' }
     ]
 
-    let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} photo={d.photo} />);
-    let messagesElements = messages.map(m => <Message message={m.message} />);
-    
+    let dialogsElements = dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} photo={dialog.photo} />);
+    let messagesElements = messages.map(messenge => <Message message={messenge.message} />);
+
     return (
         <div className={s.dialogs} >
             <div className={s.dialogsItems}>
