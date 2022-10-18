@@ -3,35 +3,17 @@
     padding: 0;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    margin: 0;
-}
-
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
 
 .dialogsItems {
-    padding: 10px;
+    /* padding: 10px; */
+    width: 320px;
+    margin: 10px;
     color: white;
-}
-
-.dialog {
-    color: white;
-    width: 300px;
-    /* display: flex; */
-    /* justify-content: space-around; */
-    margin-bottom: 10px;
-}
-
-.activeD {
-    color: white;
-    width: 300px;
-    background-color: red;
-    margin-bottom: 10px;
+    border-right: 1px solid white;
 }
 
 a.active, a.passive {
@@ -41,6 +23,8 @@ a.active, a.passive {
     background-color: white;
     border-radius: 5px;
     padding: 4px;
+    text-decoration: none;
+    margin-bottom: 10px;
 }
 
 a.active {
@@ -49,26 +33,14 @@ a.active {
     border: 1px solid white;
     font-style: italic;
     width: 310px;
-    transition: background-color 1s, width 20s, transform 2s;
+    transition: background-color 1s, width 1s, transform 2s;
 }
 
 
 a.passive {
     color: #5DB8EF;
-}
-
-.container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    color: #5DB8EF;
-    background-color: white;
-    border-radius: 5px;
-    padding: 4px;
-}
-
-.active .containe {
-    background-color: red;
+    transition: background-color 1s, width 1s, transform 2s;
+    width: 300px;
 }
 
 .avatar {
