@@ -6,18 +6,18 @@ import { NavLink } from 'react-router-dom';
 const DialogItem = (props) => {
     let path = '/dialogs/' + props.id;
 
-    // return <div id='test' className = {s.dialog} >
-    return <div id='test' className = {test=>{console.log("test", test); return s.dialog}} >
+    return <div id='test' className = {s.dialog} >
+    {/* return <div id='test' className = {eto => eto.isActive ? s.activeD : s.dialog} > */}
         <NavLink to={path} className={msg => msg.isActive ? s.active : s.passive}>
             {/* <div className={test => test.isActive ? s.container : s.container}> */}
-            <div className={s.container}>
+            {/* <div className={s.container}> */}
                 <div className={s.avatar}>
                     <img className={s.photo} src={props.photo} alt="photo" />
                 </div>
                 <div className={s.username}>
                     <p>{props.name}</p>
                 </div>
-            </div>
+            {/* </div> */}
         </NavLink>
     </div>
 }

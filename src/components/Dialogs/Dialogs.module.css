@@ -28,13 +28,33 @@ a {
 }
 
 .activeD {
+    color: white;
+    width: 300px;
     background-color: red;
+    margin-bottom: 10px;
+}
+
+a.active, a.passive {
+    display: flex;
+    justify-content: space-between;
+    color: #5DB8EF;
+    background-color: white;
+    border-radius: 5px;
+    padding: 4px;
 }
 
 a.active {
-    color: whitesmoke;
+    background-color: #5DB8EF;
+    color: white;
+    border: 1px solid white;
     font-style: italic;
-    
+    width: 310px;
+    transition: background-color 1s, width 20s, transform 2s;
+}
+
+
+a.passive {
+    color: #5DB8EF;
 }
 
 .container {
