@@ -6,7 +6,7 @@ import logo from './onepiece.png'
   
 
 
-export const Profileinfo = () => {
+export const Profileinfo = (props) => {
   return (
     <div className={s.container}>
       <div className={s.content}>
@@ -14,7 +14,7 @@ export const Profileinfo = () => {
         <img src={second} alt=""  />
       </div>
       <div className={s.descriptionBlock}>
-        ava
+        {props.name}
       </div>
     </div>
   )

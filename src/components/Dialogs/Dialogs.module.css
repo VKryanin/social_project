@@ -22,9 +22,9 @@ a.active, a.passive {
     color: #5DB8EF;
     background-color: white;
     border-radius: 5px;
-    padding: 4px;
     text-decoration: none;
     margin-bottom: 10px;
+    padding: 2%;
 }
 
 a.active {
@@ -33,14 +33,17 @@ a.active {
     border: 1px solid white;
     font-style: italic;
     width: 310px;
-    transition: background-color 1s, width 1s, transform 2s;
+    height: 65px;
+    box-shadow : 0 0 7px 3px whitesmoke ;
+    transition: background-color 1s, width 1s, height 1s ,transform 2s, box-shadow 1s;
 }
 
 
 a.passive {
     color: #5DB8EF;
-    transition: background-color 1s, width 1s, transform 2s;
+    transition: background-color 1s, width 1s, height 1s ,box-shadow 1s, transform 2s;
     width: 300px;
+    height: 60px;
 }
 
 .avatar {
