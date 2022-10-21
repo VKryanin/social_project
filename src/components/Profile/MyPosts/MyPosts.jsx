@@ -5,15 +5,21 @@ import s from './MyPosts.module.css'
 export const MyPosts = (props) => {
 
     let wallitems = props.posts.map(p => <Wall author={p.author} photo={p.photo} date={p.date} post={p.post} like={p.likesCount} />);
+
+    let newPostElement = React.createRef();
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text)
+    }
     return (
         <div>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button className={s.styleOfButton} onClick={addPost}>Add post</button>
                 </div>
             </div>
             {wallitems}
@@ -24,7 +30,6 @@ export const MyPosts = (props) => {
 export const Wall = (props) => {
     return (
         <div className={s.conteiner}>
-
             <div className={s.about}>
                 <div className={s.photo}>
                     <img src={props.photo} alt="test" />

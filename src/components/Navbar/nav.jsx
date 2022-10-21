@@ -1,22 +1,15 @@
 import style from './Navbar.module.css'
 import { NavLink } from 'react-router-dom'
+import Zoro from './zoro.png'
 
 export function Navbar() {
   return <nav className={style.nav}>
-    <div className={style.item}>
-      <NavLink to='/profile' className = { navData => navData.isActive ? style.active : null }>Profile</NavLink>
-    </div>
-    <div className={style.item}>
-      <NavLink to='/dialogs' className = { navData => navData.isActive ? style.active : null }>Messages</NavLink>
-    </div>
-    <div className={style.item}>
-      <NavLink to='/news' className = { navData => navData.isActive ? style.active : null }>News</NavLink>
-    </div>
-    <div className={style.item}>
-      <NavLink to='/music' className = { navData => navData.isActive ? style.active : null }>Music</NavLink>
-    </div>
-    <div className={style.item}>
-      <NavLink to='/setting' className = { navData => navData.isActive ? style.active : style.item }>Setting</NavLink>
-    </div>
+    <NavLink to='/profile' className={navData => navData.isActive ? style.active : style.item}>Profile</NavLink>
+    <NavLink to='/dialogs' className={navData => navData.isActive ? style.active : style.item}>Messages</NavLink>
+    <NavLink to='/news' className={navData => navData.isActive ? style.active : style.item}>News</NavLink>
+    <NavLink to='/music' className={navData => navData.isActive ? style.active : style.item}>Music</NavLink>
+    {/* <div className={style.item}> */}
+    <NavLink to='/setting' className={navData => navData.isActive ? style.active : style.item}>Setting</NavLink>
+    {/* </div> */}
   </nav>
 }

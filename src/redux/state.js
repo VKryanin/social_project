@@ -1,3 +1,6 @@
+import {rerenderEntireTree} from './render'
+
+
 let state = {
     profilePage: {
         posts: [
@@ -27,7 +30,22 @@ let state = {
             { id: 'id8', name: 'Brook', photo: 'https://i.pinimg.com/originals/16/01/39/16013909cf63f579d537c710ee3d606f.jpg' },
             { id: 'id9', name: 'Jinbe', photo: 'https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2022/08/12/162612956.jpg' }
         ]
-    }
+    },
+    sidebar: {}
 }
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: state.profilePage.posts.length + 1,
+        post: postMessage,
+        likesCount: Math.floor(Math.random() * 1000),
+        author: 'Monkey D. Luffy',
+        photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg',
+        date: 'there is should be the date'
+    };
+    state.profilePage.posts.unshift(newPost)
+    rerenderEntireTree(state);
+}
+
 
 export default state;
