@@ -20,6 +20,10 @@
     width: 100%;
 }
 
+.textarea {
+    padding: 3px;
+}
+
 .about {
     width: 20%;
     display: flex;

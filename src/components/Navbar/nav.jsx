@@ -1,6 +1,5 @@
 import style from './Navbar.module.css'
 import { NavLink } from 'react-router-dom'
-import Zoro from './zoro.png'
 
 export function Navbar() {
   return <nav className={style.nav}>
