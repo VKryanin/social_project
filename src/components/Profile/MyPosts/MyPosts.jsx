@@ -16,7 +16,7 @@ export const MyPosts = (props) => {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea className={s.textarea} ref={newPostElement} placeholder='Писать здесь'></textarea>
+                    <textarea value={'it-kamasutra'} className={s.textarea} ref={newPostElement} placeholder='Писать здесь'/>
                 </div>
                 <div>
                     <button className={s.styleOfButton} onClick={addPost}>Add post</button>
