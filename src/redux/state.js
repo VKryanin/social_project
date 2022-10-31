@@ -1,8 +1,8 @@
-import { rerenderEntireTree } from './render'
+// import { rerenderEntireTree } from '../index'
 
-// let rerenderEntireTree = () => {
-//     console.log('test')
-// }
+let rerenderEntireTree = () => {
+    console.log('test')
+}
 
 let state = {
     profilePage: {
@@ -74,9 +74,8 @@ export const updateNewMessage = (newMsg) => {
     rerenderEntireTree(state);
 }
 
-// export const subscribe = (observer) => {
-//     rerenderEntireTree = observer;
-//     console.log('test')
-// }
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
 
 export default state;
