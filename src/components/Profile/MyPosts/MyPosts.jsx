@@ -8,15 +8,21 @@ export const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text)
+        props.addPost();
+        props.updateNewPostText('');
     }
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+
+    }
+
     return (
         <div>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea value={'it-kamasutra'} className={s.textarea} ref={newPostElement} placeholder='Писать здесь'/>
+                    <textarea onChange={onPostChange} value={props.newPostText} className={s.textarea} ref={newPostElement} placeholder='Писать здесь' />
                 </div>
                 <div>
                     <button className={s.styleOfButton} onClick={addPost}>Add post</button>

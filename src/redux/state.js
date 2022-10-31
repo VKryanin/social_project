@@ -1,5 +1,4 @@
-import {rerenderEntireTree} from './render'
-
+import { rerenderEntireTree } from './render'
 
 let state = {
     profilePage: {
@@ -8,7 +7,7 @@ let state = {
             { id: 3, author: 'Monkey D. Luffy', post: 'Today I met my new nakama. His name\`s Roronoa Zoro', likesCount: Math.floor(Math.random() * 3000), date: 'November 17, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' },
             { id: 2, author: 'Monkey D. Luffy', post: 'I\'ll become king of the pirates', likesCount: Math.floor(Math.random() * 2000), date: 'October 20, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' },
             { id: 1, author: 'Monkey D. Luffy', post: 'Hello! I\`m Monkey D. Luffy', likesCount: Math.floor(Math.random() * 1000), date: 'October 20, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' }
-        ]
+        ], newPostText: 'One Piece'
     }
     ,
     dialogsPage: {
@@ -34,16 +33,20 @@ let state = {
     sidebar: {}
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: state.profilePage.posts.length + 1,
-        post: postMessage,
+        post: state.profilePage.newPostText,
         likesCount: Math.floor(Math.random() * 1000),
         author: 'Monkey D. Luffy',
         photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg',
         date: 'there is should be the date'
     };
     state.profilePage.posts.unshift(newPost)
+    rerenderEntireTree(state);
+}
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 
