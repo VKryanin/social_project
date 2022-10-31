@@ -5,14 +5,20 @@ import { Message } from './Message/Message.jsx'
 
 
 export const Dialogs = (props) => {
-    let dialogsElements = props.state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} photo={dialog.photo} />);
-    let messagesElements = props.state.messages.map(msg => <Message message={msg.message} />);
 
-    let newMessangeElement = React.createRef();
-    let sendMessange = () => {
-        let text = newMessangeElement.current.value;
-        alert(text)
-    };
+
+    let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} photo={dialog.photo} />);
+    let messagesElements = props.dialogsPage.messages.map(msg => <Message message={msg.message} />);
+
+    let newMessageElement = React.createRef();
+    let addMessage = () => {
+        props.addMessage();
+    }
+    let onChangeMessage = () => {
+        let msg = newMessageElement.current.value;
+        props.updateNewMessage(msg);
+    }
+
     return (
         <div className={s.dialogs} >
             <div className={s.dialogsItems}>
@@ -26,10 +32,10 @@ export const Dialogs = (props) => {
                 }
                 <div>
                     <div>
-                        <textarea ref={newMessangeElement}></textarea>
+                        <textarea onChange={onChangeMessage} value={props.dialogsPage.newMessageText} ref={newMessageElement} />
                     </div>
                     <div>
-                        <button onClick={sendMessange}>Send message</button>
+                        <button onClick={addMessage}>Send message</button>
                     </div>
                 </div>
             </div>
