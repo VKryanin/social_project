@@ -4,24 +4,22 @@
     box-sizing: border-box;
 }
 
-/* button {
-    background-color: white;
-    color: #5DB8EF;
-    border-radius: 5px;
-    display: block;
-    width: 150px;
-    height: 50px;
-} */
+.wrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.wrapperofbutton {
+    width: 80px;
+    height: 42px;
+}
 
 .conteiner {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
     width: 100%;
-}
-
-.textarea {
-    padding: 3px;
 }
 
 .about {
@@ -43,7 +41,7 @@
 }
 
 .post {
-    width: 75%;
+    width: 500px;
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px;

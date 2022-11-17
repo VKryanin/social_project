@@ -1,4 +1,4 @@
-import profile from './Profile.module.css'
+import profile from '../../blocks/profile/Profile.module.css'
 import React from 'react';
 import { MyPosts } from './MyPosts/MyPosts.jsx'
 import { Profileinfo } from './ProfileInfo/Profileinfo';
@@ -10,8 +10,6 @@ export const Profile = (props) => {
       <MyPosts posts={props.profilePage.posts}
         newPostText={props.profilePage.newPostText}
         dispatch = {props.dispatch}
-        // updateNewPostText={props.updateNewPostText}
-        // addPost={props.addPost} 
         />
     </div>
   )

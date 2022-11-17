@@ -15,4 +15,5 @@
 .app-wrapper-content {
   grid-area: c;
   background-color: #5DB8EF;
+  position: relative;
 }

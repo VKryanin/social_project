@@ -1,4 +1,4 @@
-// import s from './News.module.css';
+// import s from '../../blocks/news/News.module.css';
 import React from "react";
 
 

@@ -1,4 +1,4 @@
-import style from './Navbar.module.css'
+import style from '../../blocks/navbar/Navbar.module.css'
 import { NavLink } from 'react-router-dom'
 
 export function Navbar() {

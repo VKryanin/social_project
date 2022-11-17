@@ -1,4 +1,4 @@
-import s from './Profileinfo.module.css'
+import s from '../../../blocks/profile/profileinfo/Profileinfo.module.css'
 import React from 'react';
 import first from './luffy.png';
 import second from './luffy2.png'

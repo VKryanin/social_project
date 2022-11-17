@@ -1,5 +1,12 @@
 // import { _callSubscriber } from '../index'
 
+
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
+
+
 let store = {
     _state: {
         profilePage: {
@@ -8,7 +15,7 @@ let store = {
                 { id: 3, author: 'Monkey D. Luffy', post: 'Today I met my new nakama. His name\`s Roronoa Zoro', likesCount: Math.floor(Math.random() * 3000), date: 'November 17, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' },
                 { id: 2, author: 'Monkey D. Luffy', post: 'I\'ll become king of the pirates', likesCount: Math.floor(Math.random() * 2000), date: 'October 20, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' },
                 { id: 1, author: 'Monkey D. Luffy', post: 'Hello! I\`m Monkey D. Luffy', likesCount: Math.floor(Math.random() * 1000), date: 'October 20, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' }
-            ], 
+            ],
             // newPostText: 'One Piece'
         }
         ,
@@ -119,11 +126,24 @@ let store = {
             this._state.dialogsPage.newMessageText = '';
             this._callSubscriber(this._state)
         }
-        else if  (action.type === 'UPDATE-NEW-MESSAGE') {
+        else if (action.type === 'UPDATE-NEW-MESSAGE') {
             this._state.dialogsPage.newMessageText = action.newMsg;
             this._callSubscriber(this._state);
         }
     }
+}
+
+export const updateNewPostTextActionCreator = (text) => {
+    return { type: UPDATE_NEW_POST_TEXT, newText: text }
+}
+export const addPostActionCreater = () => {
+    return { type: ADD_POST }
+}
+export const updateNewMessageActionCreator = (msg) => {
+    return { type: UPDATE_NEW_MESSAGE, newMsg: msg }
+}
+export const addMessageActionCreator = () => {
+    return { type: ADD_MESSAGE }
 }
 
 window._state = store;

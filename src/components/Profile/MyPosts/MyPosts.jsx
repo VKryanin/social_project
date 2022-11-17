@@ -1,6 +1,8 @@
 import React from 'react'
-import s from './MyPosts.module.css'
-
+import s from '../../../blocks/profile/myposts/MyPosts.module.css'
+import button from '../../../blocks/button/Button.module.css'
+import textarea from '../../../blocks/textarea/Textarea.module.css'
+import { addPostActionCreater, updateNewPostTextActionCreator } from '../../../redux/state'
 
 export const MyPosts = (props) => {
 
@@ -8,25 +10,24 @@ export const MyPosts = (props) => {
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        // props.addPost();
-        props.dispatch({ type: 'ADD-POST'});
+        props.dispatch(addPostActionCreater());
     }
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        // props.updateNewPostText(text);
-        props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text})
+        let action = updateNewPostTextActionCreator(text);
+        props.dispatch(action);
 
     }
 
     return (
-        <div>
+        <div >
             <h3>My posts</h3>
-            <div>
-                <div>
-                    <textarea onChange={onPostChange} value={props.newPostText} className={s.textarea} ref={newPostElement} placeholder='Писать здесь' required/>
+            <div className={s.wrapper}>
+                <div className={s.wrapperofbutton}>
+                    <button className={button.button} onClick={addPost}>Отправить</button>
                 </div>
                 <div>
-                    <button className={s.styleOfButton} onClick={addPost}>Add post</button>
+                    <textarea onChange={onPostChange} value={props.newPostText} className={textarea.textarea} ref={newPostElement} placeholder='Писать здесь' required />
                 </div>
             </div>
             {wallitems}

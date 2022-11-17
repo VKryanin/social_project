@@ -1,0 +1,30 @@
+.button {
+    width: 80px;
+    height: 34px;
+    color: white;
+    background-color: #5DB8EF;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: 'Gilroy';
+    box-shadow: 0 7px whitesmoke;
+    padding: 3px;
+}
+
+/* .button:hover {
+    box-shadow : 0 0 7px 3px whitesmoke ;
+    transition: background-color 1s, width 1s, height 1s ,box-shadow 1s, transform 2s;
+} */
+
+.button:hover {
+    box-shadow: 0 7px whitesmoke;
+    background-color: #5DB8EF;
+    color: white;
+    font-style: italic;
+    transition: background-color .1s;
+}
+
+.button:active {
+    background-color: #5DB8EF;
+    box-shadow: 0 5px whitesmoke;
+    transform: translateY(4px);
+}

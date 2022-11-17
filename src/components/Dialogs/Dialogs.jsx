@@ -1,8 +1,10 @@
-import s from './Dialogs.module.css';
+import s from './../../blocks/dialogs/Dialogs.module.css';
+import button from './../../blocks/button/Button.module.css'
+import textarea from '../../blocks/textarea/Textarea.module.css'
 import React from "react";
 import { DialogItem } from './DialogItem/DialogItem.jsx'
 import { Message } from './Message/Message.jsx'
-import { type } from '@testing-library/user-event/dist/type';
+import { updateNewMessageActionCreator, addMessageActionCreator } from '../../redux/state'
 
 
 export const Dialogs = (props) => {
@@ -13,13 +15,12 @@ export const Dialogs = (props) => {
 
     let newMessageElement = React.createRef();
     let addMessage = () => {
-        // props.addMessage();
-        props.dispatch({type: 'ADD-MESSAGE'})
+        props.dispatch(addMessageActionCreator())
     }
     let onChangeMessage = () => {
         let msg = newMessageElement.current.value;
-        // props.updateNewMessage(msg);
-        props.dispatch({type: 'UPDATE-NEW-MESSAGE', newMsg: msg})
+        let action = updateNewMessageActionCreator(msg)
+        props.dispatch(action)
     }
 
     return (
@@ -35,10 +36,10 @@ export const Dialogs = (props) => {
                 }
                 <div>
                     <div>
-                        <textarea onChange={onChangeMessage} value={props.dialogsPage.newMessageText} ref={newMessageElement} placeholder='Напиши что нибудь'/>
+                        <textarea className={textarea.textarea} onChange={onChangeMessage} value={props.dialogsPage.newMessageText} ref={newMessageElement} placeholder='Напиши что нибудь' />
                     </div>
                     <div>
-                        <button onClick={addMessage}>Send message</button>
+                        <button className={button.button} onClick={addMessage}>Отправить</button>
                     </div>
                 </div>
             </div>

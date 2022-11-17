@@ -1,4 +1,4 @@
-import s from './../Dialogs.module.css';
+import s from '../../../blocks/dialogs/Dialogs.module.css';
 import React from "react";
 import { NavLink } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ export const DialogItem = (props) => {
                 <div className={s.username}>
                     <p>{props.name}</p>
                 </div>
-            {/* </div> */}
         </NavLink>
     </div>
 }
