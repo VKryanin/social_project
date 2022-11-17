@@ -8,7 +8,8 @@ let store = {
                 { id: 3, author: 'Monkey D. Luffy', post: 'Today I met my new nakama. His name\`s Roronoa Zoro', likesCount: Math.floor(Math.random() * 3000), date: 'November 17, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' },
                 { id: 2, author: 'Monkey D. Luffy', post: 'I\'ll become king of the pirates', likesCount: Math.floor(Math.random() * 2000), date: 'October 20, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' },
                 { id: 1, author: 'Monkey D. Luffy', post: 'Hello! I\`m Monkey D. Luffy', likesCount: Math.floor(Math.random() * 1000), date: 'October 20, 1999', photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg' }
-            ], newPostText: 'One Piece'
+            ], 
+            // newPostText: 'One Piece'
         }
         ,
         dialogsPage: {
@@ -30,16 +31,21 @@ let store = {
                 { id: 'id8', name: 'Brook', photo: 'https://i.pinimg.com/originals/16/01/39/16013909cf63f579d537c710ee3d606f.jpg' },
                 { id: 'id9', name: 'Jinbe', photo: 'https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2022/08/12/162612956.jpg' }
             ],
-            newMessageText: 'i\'ll become king of the pirates'
+            // newMessageText: 'i\'ll become king of the pirates'
         },
         sidebar: {}
-    },
-    getState() {
-        return this._state;
     },
     _callSubscriber() {
         console.log('State changed')
     },
+
+    getState() {
+        return this._state;
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
+
     dateofpost() {
         var date = new Date()
         var options = {
@@ -55,38 +61,68 @@ let store = {
         };
         return date.toLocaleString("eng", options)
     },
-    addPost() {
-        let newPost = {
-            id: this._state.profilePage.posts.length + 1,
-            post: this._state.profilePage.newPostText,
-            likesCount: Math.floor(Math.random() * 1000),
-            author: 'Monkey D. Luffy',
-            photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg',
-            date: this.dateofpost()
-        };
-        this._state.profilePage.posts.unshift(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessage() {
-        let msg = {
-            id: this._state.dialogsPage.messages.length + 1,
-            message: this._state.dialogsPage.newMessageText
-        };
-        this._state.dialogsPage.messages.unshift(msg);
-        this._state.dialogsPage.newMessageText = '';
-        this._callSubscriber(this._state)
-    },
-    updateNewMessage(newMsg) {
-        this._state.dialogsPage.newMessageText = newMsg;
-        this._callSubscriber(this._state);
-    },
-    subscribe(observer) {
-        this._callSubscriber = observer;
+    // addPost() {
+    //     let newPost = {
+    //         id: this._state.profilePage.posts.length + 1,
+    //         post: this._state.profilePage.newPostText,
+    //         likesCount: Math.floor(Math.random() * 1000),
+    //         author: 'Monkey D. Luffy',
+    //         photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg',
+    //         date: this.dateofpost()
+    //     };
+    //     this._state.profilePage.posts.unshift(newPost);
+    //     this._state.profilePage.newPostText = '';
+    //     this._callSubscriber(this._state);
+    // },
+    // updateNewPostText(newText) {
+    //     this._state.profilePage.newPostText = newText;
+    //     this._callSubscriber(this._state);
+    // },
+
+    // addMessage() {
+    //     let msg = {
+    //         id: this._state.dialogsPage.messages.length + 1,
+    //         message: this._state.dialogsPage.newMessageText
+    //     };
+    //     this._state.dialogsPage.messages.unshift(msg);
+    //     this._state.dialogsPage.newMessageText = '';
+    //     this._callSubscriber(this._state)
+    // },
+    // updateNewMessage(newMsg) {
+    //     this._state.dialogsPage.newMessageText = newMsg;
+    //     this._callSubscriber(this._state);
+    // },
+    dispatch(action) { // { type : 'ADD-POST'}
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: this._state.profilePage.posts.length + 1,
+                post: this._state.profilePage.newPostText,
+                likesCount: Math.floor(Math.random() * 1000),
+                author: 'Monkey D. Luffy',
+                photo: 'https://i.pinimg.com/564x/67/89/71/67897168a4d6ef6f8d9c8b132562dac0.jpg',
+                date: this.dateofpost()
+            };
+            this._state.profilePage.posts.unshift(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === 'ADD-MESSAGE') {
+            let msg = {
+                id: this._state.dialogsPage.messages.length + 1,
+                message: this._state.dialogsPage.newMessageText
+            };
+            this._state.dialogsPage.messages.unshift(msg);
+            this._state.dialogsPage.newMessageText = '';
+            this._callSubscriber(this._state)
+        }
+        else if  (action.type === 'UPDATE-NEW-MESSAGE') {
+            this._state.dialogsPage.newMessageText = action.newMsg;
+            this._callSubscriber(this._state);
+        }
     }
 }
 
